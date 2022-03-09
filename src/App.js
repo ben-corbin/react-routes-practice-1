@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductsPage from "./pages/Products";
+import AppsPage from "./pages/Apps"
 import "./styles.css";
 
 const productsData = [
@@ -81,10 +82,17 @@ export default function App() {
             <li>
               <Link to="/products">Products</Link>
             </li>
+            <li>
+              <Link to="/apps">Apps</Link>
+            </li>
           </ul>
         </nav>
       </header>
       <Routes>
+      <Route
+          path="/apps"
+          element={<AppsPage apps={apps} />}
+        />
         <Route
           path="/products"
           element={<ProductsPage products={products} />}
